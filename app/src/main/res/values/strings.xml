@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Flights</string>
+    <string-array name="Currencies">
+        <item>EUR (Euro)</item>
+        <item>USD (US dollar)</item>
+        <item>GBP (GB pound)</item>
+        <item>CAD (Canadian dollar)</item>
+        <item>AUD (Australian dollar)</item>
+        <item>JPY (Japanese Yen)</item>
+    </string-array>
+
+
+</resources>

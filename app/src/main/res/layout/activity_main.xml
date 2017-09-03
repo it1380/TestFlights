@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gr.kmilo.testamadeus.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Origin:" />
+
+    <TextView
+        android:id="@+id/tvDest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination:"
+        android:layout_below="@+id/actvOrigin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_below="@+id/tvOrigin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tvIATAOrigin"
+        android:layout_toStartOf="@+id/tvIATAOrigin" />
+
+    <TextView
+        android:id="@+id/tvIATAOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/actvOrigin"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:minEms="3"
+        android:visibility="invisible" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvDest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_below="@+id/tvDest"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tvIATADest"
+        android:layout_toStartOf="@+id/tvIATADest" />
+
+    <TextView
+        android:id="@+id/tvIATADest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/actvDest"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:minEms="3"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actvDest"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/tvFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/actvDest"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.89"
+            android:text="Date From:" />
+
+
+        <TextView
+            android:id="@+id/tvTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actvDest"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/edFrom"
+            android:layout_toRightOf="@+id/edFrom"
+            android:layout_weight="1"
+            android:text="Date To:" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout3">
+
+        <EditText
+            android:id="@+id/edFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_weight="1"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="From Date"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edFrom"
+            android:layout_alignBottom="@+id/edFrom"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="To Date"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+
+
+    <CheckBox
+        android:id="@+id/cbOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="One Way"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvPas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passengers:  Adults, Children,  Infants"
+        android:layout_below="@+id/cbNonstop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvPas"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:id="@+id/edAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tvOrigin"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/tvOrigin"
+            android:layout_below="@+id/tvPas"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Adults"
+            android:inputType="number"
+            android:text="1" />
+
+        <EditText
+            android:id="@+id/edChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPas"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/edInf"
+            android:layout_toLeftOf="@+id/tvIATADest"
+            android:layout_toRightOf="@+id/edInf"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Children"
+            android:inputType="number"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/edInf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tvDest"
+            android:layout_alignRight="@+id/tvDest"
+            android:layout_below="@+id/tvPas"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/edAdult"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Infants"
+            android:inputType="number"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max Price:"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/edMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvMax"
+        android:ems="10"
+        android:hint="500"
+        android:inputType="number"
+        android:text="1500"
+        android:layout_alignRight="@+id/tvRes"
+        android:layout_alignEnd="@+id/tvRes" />
+
+    <TextView
+        android:id="@+id/tvCur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvMax"
+        android:text="Currency" />
+
+    <TextView
+        android:id="@+id/tvRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of results:"
+        android:layout_below="@+id/edMax"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/edRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvRes"
+        android:ems="10"
+        android:hint="10"
+        android:inputType="number"
+        android:text="5"
+        android:layout_alignRight="@+id/tvRes"
+        android:layout_alignEnd="@+id/tvRes" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:text="Search Flights" />
+
+    <ProgressBar
+        android:id="@+id/pbSearching"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/spCur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/Currencies"
+        android:layout_below="@+id/tvCur"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/pbSearching"
+        android:layout_alignLeft="@+id/pbSearching"
+        android:layout_alignStart="@+id/pbSearching"
+        android:layout_toRightOf="@+id/pbSearching" />
+
+    <CheckBox
+        android:id="@+id/cbNonstop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nonstop"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
